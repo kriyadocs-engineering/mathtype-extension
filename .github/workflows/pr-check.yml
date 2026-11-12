@@ -1,0 +1,17 @@
+# DONOT ALTER - DevOps OWNED
+name: PR Check
+
+on:
+  pull_request:
+    types: [edited, opened, reopened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  pr_check:
+    uses: kriyadocs-engineering/kriya-github-workflows/.github/workflows/pr-check.yml@main # if you want alternatively pin to tag version
+    # with:
+    #   # Kriyadocs Jira project keys (case sensitive, both cases allowed)
+    #   jira_project_pr_title_scope: "DEVOPS|devops|KP|kp"
